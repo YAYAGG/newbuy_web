@@ -42,6 +42,7 @@ public class MeetingController {
     public String getAllUser(Model model) throws Exception {
         List<User> userList = userService.findUserList();
         model.addAttribute("userList", userList);
+        //guanxinyancesgu
         return "test/userList";
     }
 
