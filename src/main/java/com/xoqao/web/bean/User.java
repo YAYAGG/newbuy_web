@@ -4,7 +4,7 @@ public class User {
     private Integer uid;
 
     private String cellphone;
-
+//画画哈uhauhuahua
     private String imei;
 
     private String email;
