@@ -30,6 +30,7 @@ public class DemoController {
     public String postmanage(Model model) throws Exception {
         return "backmanage/postmanage";
     }
+
     @RequestMapping("/intoSecAdd")
     public String sectionAdd(Model model) throws Exception {
         return "backmanage/sectionAdd";
