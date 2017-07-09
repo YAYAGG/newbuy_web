@@ -1,7 +1,8 @@
 package com.xoqao.web.service;
 
 
-import com.xoqao.web.bean.User;
+
+import com.xoqao.web.bean.user.User;
 import com.xoqao.web.dao.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,23 +15,17 @@ import java.util.List;
  */
 @Service
 public class UserServiceImpl implements UserService {
+
     @Autowired
-    UserMapper userMapper;
+    private UserMapper userMapper;
 
-    public void insertUser(User user) throws Exception {
-     userMapper.insert(user);
+    public User findUserByphone(String phone) throws Exception {
+        User userByphone = userMapper.findUserByphone(phone);
+        return userByphone;
     }
 
-    public List<User> findUserList() throws Exception {
-        List<User> userList = userMapper.selectByExample(null);
-        return userList;
+    public List<User> findAllUsers() throws Exception {
+        List<User> allUsers = userMapper.findAllUsers();
+        return allUsers;
     }
-
-
-
-    public User findUserByUid(Integer uid) throws Exception {
-        User user = userMapper.selectByPrimaryKey(uid);
-        return user;
-    }
-
 }
