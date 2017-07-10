@@ -1,8 +1,8 @@
 package com.xoqao.web.service;
 
 
-
-import com.xoqao.web.bean.User;
+import com.xoqao.web.bean.user.User;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -11,25 +11,8 @@ import java.util.List;
  * Created by 123 on 2017/2/20.
  */
 public interface UserService {
-    /**
-     * 添加用户
-     * @param user
-     * @throws Exception
-     */
-    public void insertUser(User user)throws Exception;
 
-    /**
-     * 查找所有用户
-     * @return
-     * @throws Exception
-     */
-    public List<User> findUserList()throws Exception;
+    User findUserByphone( String phone) throws Exception;
 
-    /**
-     * 根据用户id查询用户
-     * @param uid 用户id
-     * @return
-     * @throws Exception
-     */
-    public User findUserByUid(Integer uid)throws Exception;
+    List<User> findAllUsers()throws Exception;
 }
